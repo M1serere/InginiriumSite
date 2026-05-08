@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсы — Инжинириум</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">Инжинириум</div>
+
+    <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="courses.html">Курсы</a>
+        <a href="#">Филиалы</a>
+        <a href="#">Контакты</a>
+    </nav>
+</header>
+
+<section class="page-hero courses-hero">
+    <h1>Курсы Инжинириума</h1>
+    <p>Выберите направление, которое интересно именно вам</p>
+</section>
+
+<section class="courses-section reveal">
+    <h2>Направления обучения</h2>
+
+    <div class="filter-buttons">
+        <button class="filter-btn active-filter" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="programming">Программирование</button>
+        <button class="filter-btn" data-filter="robotics">Робототехника</button>
+        <button class="filter-btn" data-filter="engineering">Инженерия</button>
+        <button class="filter-btn" data-filter="design">Дизайн и 3D</button>
+    </div>
+
+    <div class="courses-grid">
+        <div class="course-card" data-category="programming">
+            <span class="course-tag">Программирование</span>
+            <h3>Python для школьников</h3>
+            <p>Основы программирования, переменные, условия, циклы и мини-проекты.</p>
+            <ul>
+                <li>Возраст: 10–14 лет</li>
+                <li>Формат: очно</li>
+                <li>Уровень: начальный</li>
+            </ul>
+            <button class="details-btn" data-title="Python для школьников" data-text="На курсе ученики изучают основы Python, создают простые игры, программы и учатся мыслить как программисты.">
+                Подробнее
+            </button>
+        </div>
+
+        <div class="course-card" data-category="robotics">
+            <span class="course-tag">Робототехника</span>
+            <h3>Робототехника LEGO</h3>
+            <p>Сборка роботов, работа с датчиками и программирование движения.</p>
+            <ul>
+                <li>Возраст: 7–11 лет</li>
+                <li>Формат: очно</li>
+                <li>Уровень: начальный</li>
+            </ul>
+            <button class="details-btn" data-title="Робототехника LEGO" data-text="Ребята собирают модели роботов, программируют их поведение и учатся решать инженерные задачи.">
+                Подробнее
+            </button>
+        </div>
+
+        <div class="course-card" data-category="engineering">
+            <span class="course-tag">Инженерия</span>
+            <h3>Юный инженер</h3>
+            <p>Знакомство с механизмами, конструкциями и техническим творчеством.</p>
+            <ul>
+                <li>Возраст: 9–13 лет</li>
+                <li>Формат: очно</li>
+                <li>Уровень: базовый</li>
+            </ul>
+            <button class="details-btn" data-title="Юный инженер" data-text="Курс помогает понять основы инженерии: как работают механизмы, конструкции и технические системы.">
+                Подробнее
+            </button>
+        </div>
+
+        <div class="course-card" data-category="design">
+            <span class="course-tag">Дизайн и 3D</span>
+            <h3>3D-моделирование</h3>
+            <p>Создание 3D-объектов, макетов и простых инженерных моделей.</p>
+            <ul>
+                <li>Возраст: 11–16 лет</li>
+                <li>Формат: очно</li>
+                <li>Уровень: начальный</li>
+            </ul>
+            <button class="details-btn" data-title="3D-моделирование" data-text="Ученики осваивают основы 3D-моделирования и создают собственные объекты для проектов.">
+                Подробнее
+            </button>
+        </div>
+
+        <div class="course-card" data-category="programming">
+            <span class="course-tag">Программирование</span>
+            <h3>Создание сайтов</h3>
+            <p>HTML, CSS и JavaScript для разработки современных веб-страниц.</p>
+            <ul>
+                <li>Возраст: 12–16 лет</li>
+                <li>Формат: очно/онлайн</li>
+                <li>Уровень: начальный</li>
+            </ul>
+            <button class="details-btn" data-title="Создание сайтов" data-text="На курсе ученики создают сайты, изучают HTML, CSS, JavaScript и основы веб-дизайна.">
+                Подробнее
+            </button>
+        </div>
+
+        <div class="course-card" data-category="engineering">
+            <span class="course-tag">Инженерия</span>
+            <h3>Электроника</h3>
+            <p>Основы схем, датчиков, микроконтроллеров и простых устройств.</p>
+            <ul>
+                <li>Возраст: 12–17 лет</li>
+                <li>Формат: очно</li>
+                <li>Уровень: базовый</li>
+            </ul>
+            <button class="details-btn" data-title="Электроника" data-text="На занятиях ученики знакомятся с электронными компонентами, собирают схемы и создают простые устройства.">
+                Подробнее
+            </button>
+        </div>
+    </div>
+</section>
+
+<div class="modal" id="course-modal">
+    <div class="modal-content">
+        <button class="modal-close" id="modal-close">×</button>
+        <h2 id="modal-title"></h2>
+        <p id="modal-text"></p>
+        <button class="main-btn">Записаться</button>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>© 2026 Инжинириум МГТУ им. Н.Э. Баумана</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
