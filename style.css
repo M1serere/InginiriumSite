@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f4f8ff;
+    background: #fff8e6;
     color: #1c1c1c;
 }
 
@@ -26,7 +26,7 @@ body {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #0066cc;
+    color: #f2b600;
 }
 
 .nav a {
@@ -37,12 +37,12 @@ body {
 }
 
 .nav a:hover {
-    color: #0066cc;
+    color: #f2b600;
 }
 
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, #0057b8, #00aaff);
+    background: linear-gradient(135deg, #f2b600, #ffd84d);
     display: flex;
     align-items: center;
     padding: 0 60px;
@@ -65,19 +65,21 @@ body {
 }
 
 .main-btn {
+    display: inline-block;
     padding: 15px 30px;
     background: white;
-    color: #0057b8;
+    color: #b56a00;
     border: none;
     border-radius: 30px;
     font-size: 18px;
+    text-decoration: none;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .main-btn:hover {
     transform: scale(1.05);
-    background: #eaf4ff;
+    background: #fff3cf;
 }
 
 section {
@@ -88,7 +90,7 @@ h2 {
     font-size: 36px;
     margin-bottom: 30px;
     text-align: center;
-    color: #0057b8;
+    color: #f2b600;
 }
 
 .about p {
@@ -120,7 +122,7 @@ h2 {
 }
 
 .card h3 {
-    color: #0066cc;
+    color: #f2b600;
     margin-bottom: 15px;
 }
 
@@ -143,7 +145,7 @@ h2 {
 .counter {
     font-size: 48px;
     font-weight: bold;
-    color: #0066cc;
+    color: #f2b600;
 }
 
 .stats-box p {
@@ -152,7 +154,7 @@ h2 {
 }
 
 .footer {
-    background: #003d7a;
+    background: #8a5a00;
     color: white;
     text-align: center;
     padding: 30px;
@@ -206,7 +208,7 @@ h2 {
 .page-hero {
     min-height: 360px;
     padding: 140px 60px 80px;
-    background: linear-gradient(135deg, #0057b8, #00aaff);
+    background: linear-gradient(135deg, #f2b600, #ffd84d);
     color: white;
     text-align: center;
 }
@@ -221,7 +223,7 @@ h2 {
 }
 
 .courses-section {
-    background: #f4f8ff;
+    background: #fff8e6;
 }
 
 .filter-buttons {
@@ -234,9 +236,9 @@ h2 {
 
 .filter-btn {
     padding: 12px 22px;
-    border: 2px solid #0066cc;
+    border: 2px solid #f2b600;
     background: white;
-    color: #0066cc;
+    color: #b56a00;
     border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
@@ -245,7 +247,7 @@ h2 {
 
 .filter-btn:hover,
 .active-filter {
-    background: #0066cc;
+    background: #f2b600;
     color: white;
 }
 
@@ -271,15 +273,15 @@ h2 {
 .course-tag {
     display: inline-block;
     padding: 7px 14px;
-    background: #eaf4ff;
-    color: #0066cc;
+    background: #fff3cf;
+    color: #b56a00;
     border-radius: 20px;
     font-size: 14px;
     margin-bottom: 15px;
 }
 
 .course-card h3 {
-    color: #0057b8;
+    color: #f2b600;
     margin-bottom: 15px;
 }
 
@@ -299,7 +301,7 @@ h2 {
 
 .details-btn {
     padding: 12px 20px;
-    background: #0066cc;
+    background: #f2b600;
     color: white;
     border: none;
     border-radius: 25px;
@@ -308,7 +310,7 @@ h2 {
 }
 
 .details-btn:hover {
-    background: #004f9e;
+    background: #b56a00;
     transform: scale(1.05);
 }
 
@@ -331,7 +333,7 @@ h2 {
 .modal {
     position: fixed;
     inset: 0;
-    background: rgba(0, 25, 60, 0.65);
+    background: rgba(91, 61, 0, 0.65);
     display: none;
     justify-content: center;
     align-items: center;
@@ -371,7 +373,7 @@ h2 {
     background: none;
     font-size: 34px;
     cursor: pointer;
-    color: #0057b8;
+    color: #f2b600;
 }
 
 @keyframes modalShow {
@@ -393,5 +395,166 @@ h2 {
 
     .page-hero h1 {
         font-size: 34px;
+    }
+}
+
+.branches-section {
+    background: #fff8e6;
+}
+
+.branches-search {
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.branches-search input {
+    width: 100%;
+    padding: 16px 22px;
+    border: 2px solid #f2b600;
+    border-radius: 30px;
+    font-size: 17px;
+    outline: none;
+}
+
+.branches-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.branches-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.branch-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    animation: courseShow 0.5s ease;
+}
+
+.branch-card:hover {
+    transform: translateX(8px);
+}
+
+.branch-card h3 {
+    color: #f2b600;
+    margin-bottom: 12px;
+}
+
+.branch-card p {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.active-branch {
+    border-color: #f2b600;
+    background: #fff3cf;
+}
+
+.branch-btn {
+    margin-top: 12px;
+    padding: 11px 18px;
+    background: #f2b600;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.branch-btn:hover {
+    background: #b56a00;
+    transform: scale(1.05);
+}
+
+.map-box {
+    position: sticky;
+    top: 120px;
+    min-height: 430px;
+    background: linear-gradient(135deg, #fff1c2, #ffffff);
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.map-pin {
+    font-size: 54px;
+}
+
+.map-box h3 {
+    color: #f2b600;
+    margin: 15px 0 10px;
+}
+
+.map-box p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.fake-map-grid {
+    height: 230px;
+    border-radius: 20px;
+    background-image:
+        linear-gradient(rgba(242, 182, 0, 0.18) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(242, 182, 0, 0.18) 2px, transparent 2px);
+    background-size: 38px 38px;
+    background-color: #fffaf0;
+    position: relative;
+}
+
+.fake-map-grid::after {
+    content: "Карта филиала";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f2b600;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.google-map {
+    display: block;
+    width: 100%;
+    height: 230px;
+    border: 0;
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 1px rgba(242, 182, 0, 0.18);
+}
+
+.hide-branch {
+    display: none;
+}
+
+@keyframes pinPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 900px) {
+    .branches-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .map-box {
+        position: static;
     }
 }

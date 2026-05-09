@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Филиалы — Инжинириум</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">Инжинириум</div>
+
+    <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="courses.html">Курсы</a>
+        <a href="branches.html">Филиалы</a>
+        <a href="#">Контакты</a>
+    </nav>
+</header>
+
+<section class="page-hero branches-hero">
+    <h1>Филиалы Инжинириума</h1>
+    <p>Найдите удобную площадку для занятий рядом с вами</p>
+</section>
+
+<section class="branches-section reveal">
+    <h2>Наши площадки</h2>
+
+    <div class="branches-search">
+        <input type="text" id="branch-search" placeholder="Введите район, метро или адрес">
+    </div>
+
+    <div class="branches-layout">
+        <div class="branches-list">
+
+            <div class="branch-card active-branch" data-branch="Бауманская" data-address="Москва, ул. Бауманская, 5" data-map-src="https://www.google.com/maps?q=55.7729,37.6803&z=16&output=embed">
+                <h3>Инжинириум Бауманская</h3>
+                <p><strong>Адрес:</strong> Москва, ул. Бауманская, 5</p>
+                <p><strong>Метро:</strong> Бауманская</p>
+                <p><strong>Телефон:</strong> +7 (495) 000-00-01</p>
+                <button class="branch-btn">Показать на карте</button>
+            </div>
+
+            <div class="branch-card" data-branch="Курская" data-address="Москва, ул. Земляной Вал, 12" data-map-src="https://www.google.com/maps?q=55.7571,37.6596&z=16&output=embed">
+                <h3>Инжинириум Курская</h3>
+                <p><strong>Адрес:</strong> Москва, ул. Земляной Вал, 12</p>
+                <p><strong>Метро:</strong> Курская</p>
+                <p><strong>Телефон:</strong> +7 (495) 000-00-02</p>
+                <button class="branch-btn">Показать на карте</button>
+            </div>
+
+            <div class="branch-card" data-branch="ВДНХ" data-address="Москва, проспект Мира, 119" data-map-src="https://www.google.com/maps?q=55.8298,37.6335&z=16&output=embed">
+                <h3>Инжинириум ВДНХ</h3>
+                <p><strong>Адрес:</strong> Москва, проспект Мира, 119</p>
+                <p><strong>Метро:</strong> ВДНХ</p>
+                <p><strong>Телефон:</strong> +7 (495) 000-00-03</p>
+                <button class="branch-btn">Показать на карте</button>
+            </div>
+
+            <div class="branch-card" data-branch="Технопарк" data-address="Москва, проспект Андропова, 18" data-map-src="https://www.google.com/maps?q=55.6958,37.6657&z=16&output=embed">
+                <h3>Инжинириум Технопарк</h3>
+                <p><strong>Адрес:</strong> Москва, проспект Андропова, 18</p>
+                <p><strong>Метро:</strong> Технопарк</p>
+                <p><strong>Телефон:</strong> +7 (495) 000-00-04</p>
+                <button class="branch-btn">Показать на карте</button>
+            </div>
+
+        </div>
+
+        <div class="map-box">
+            <div class="map-pin">📍</div>
+            <h3 id="map-title">Инжинириум Бауманская</h3>
+            <p id="map-address">Москва, ул. Бауманская, 5</p>
+            <iframe
+                id="google-map"
+                class="google-map"
+                src="https://www.google.com/maps?q=55.7729,37.6803&z=16&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 Инжинириум МГТУ им. Н.Э. Баумана</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

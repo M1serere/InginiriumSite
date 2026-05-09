@@ -122,3 +122,45 @@ if (modal) {
         }
     });
 }
+
+const branchCards = document.querySelectorAll(".branch-card");
+const mapTitle = document.getElementById("map-title");
+const mapAddress = document.getElementById("map-address");
+const googleMap = document.getElementById("google-map");
+const branchSearch = document.getElementById("branch-search");
+
+branchCards.forEach(card => {
+    const button = card.querySelector(".branch-btn");
+
+    button.addEventListener("click", () => {
+        branchCards.forEach(item => item.classList.remove("active-branch"));
+        card.classList.add("active-branch");
+
+        const branchName = card.getAttribute("data-branch");
+        const branchAddress = card.getAttribute("data-address");
+        const mapSrc = card.getAttribute("data-map-src");
+
+        mapTitle.textContent = "Инжинириум " + branchName;
+        mapAddress.textContent = branchAddress;
+
+        if (googleMap && mapSrc) {
+            googleMap.src = mapSrc;
+        }
+    });
+});
+
+if (branchSearch) {
+    branchSearch.addEventListener("input", () => {
+        const searchText = branchSearch.value.toLowerCase();
+
+        branchCards.forEach(card => {
+            const cardText = card.textContent.toLowerCase();
+
+            if (cardText.includes(searchText)) {
+                card.classList.remove("hide-branch");
+            } else {
+                card.classList.add("hide-branch");
+            }
+        });
+    });
+}
