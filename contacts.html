@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты — Инжинириум</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">Инжинириум</div>
+
+    <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="courses.html">Курсы</a>
+        <a href="branches.html">Филиалы</a>
+        <a href="contacts.html">Контакты</a>
+    </nav>
+</header>
+
+<section class="page-hero contacts-hero">
+    <h1>Контакты</h1>
+    <p>Свяжитесь с нами, чтобы узнать больше о курсах и записи на занятия</p>
+</section>
+
+<section class="contacts-section reveal">
+    <h2>Как с нами связаться</h2>
+
+    <div class="contacts-layout">
+
+        <div class="contacts-info">
+            <div class="contact-card">
+                <h3>Телефон</h3>
+                <p>+7 (495) 000-00-00</p>
+            </div>
+
+            <div class="contact-card">
+                <h3>Email</h3>
+                <p>info@inginirium.ru</p>
+            </div>
+
+            <div class="contact-card">
+                <h3>Адрес</h3>
+                <p>Москва, ул. Бауманская, 5</p>
+            </div>
+
+            <div class="contact-card">
+                <h3>Время работы</h3>
+                <p>Пн–Пт: 10:00–19:00</p>
+                <p>Сб–Вс: 10:00–17:00</p>
+            </div>
+        </div>
+
+        <div class="contact-form-box">
+            <h3>Оставить заявку</h3>
+
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="user-name">Ваше имя</label>
+                    <input type="text" id="user-name" placeholder="Введите имя">
+                    <span class="error-text"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="user-phone">Телефон</label>
+                    <input type="text" id="user-phone" placeholder="+7 (___) ___-__-__">
+                    <span class="error-text"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="user-course">Интересующий курс</label>
+                    <select id="user-course">
+                        <option value="">Выберите курс</option>
+                        <option value="python">Python для школьников</option>
+                        <option value="robotics">Робототехника LEGO</option>
+                        <option value="engineering">Юный инженер</option>
+                        <option value="web">Создание сайтов</option>
+                        <option value="3d">3D-моделирование</option>
+                    </select>
+                    <span class="error-text"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="user-message">Комментарий</label>
+                    <textarea id="user-message" placeholder="Напишите вопрос или пожелание"></textarea>
+                </div>
+
+                <button type="submit" class="main-btn form-submit-btn">Отправить заявку</button>
+            </form>
+
+            <div class="success-message" id="success-message">
+                Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 Инжинириум МГТУ им. Н.Э. Баумана</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

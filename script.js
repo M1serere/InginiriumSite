@@ -164,3 +164,65 @@ if (branchSearch) {
         });
     });
 }
+
+const contactForm = document.getElementById("contact-form");
+
+if (contactForm) {
+    const userName = document.getElementById("user-name");
+    const userPhone = document.getElementById("user-phone");
+    const userCourse = document.getElementById("user-course");
+    const successMessage = document.getElementById("success-message");
+
+    function showError(input, message) {
+        const formGroup = input.closest(".form-group");
+        const errorText = formGroup.querySelector(".error-text");
+
+        formGroup.classList.add("error");
+        errorText.textContent = message;
+    }
+
+    function clearError(input) {
+        const formGroup = input.closest(".form-group");
+        const errorText = formGroup.querySelector(".error-text");
+
+        formGroup.classList.remove("error");
+        errorText.textContent = "";
+    }
+
+    contactForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        let isValid = true;
+
+        clearError(userName);
+        clearError(userPhone);
+        clearError(userCourse);
+
+        if (userName.value.trim() === "") {
+            showError(userName, "Введите имя");
+            isValid = false;
+        }
+
+        if (userPhone.value.trim() === "") {
+            showError(userPhone, "Введите телефон");
+            isValid = false;
+        } else if (userPhone.value.trim().length < 6) {
+            showError(userPhone, "Телефон слишком короткий");
+            isValid = false;
+        }
+
+        if (userCourse.value === "") {
+            showError(userCourse, "Выберите курс");
+            isValid = false;
+        }
+
+        if (isValid) {
+            successMessage.classList.add("show-success");
+            contactForm.reset();
+
+            setTimeout(() => {
+                successMessage.classList.remove("show-success");
+            }, 5000);
+        }
+    });
+}
