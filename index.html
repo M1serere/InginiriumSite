@@ -9,7 +9,9 @@
 <body>
 
 <header class="header">
-    <div class="logo">Инжинириум</div>
+    <a class="logo logo-link" href="index.html" aria-label="Inginirium">
+        <img src="inginirium1.png" alt="Inginirium logo">
+    </a>
 
     <nav class="nav">
         <a href="index.html">Главная</a>
@@ -25,6 +27,9 @@
         <p id="typing-text"></p>
         <a class="main-btn" href="courses.html">Выбрать курс</a>
     </div>
+    <div class="hero-logo-card" aria-hidden="true">
+        <img src="inginirium2.png" alt="">
+    </div>
 </section>
 
 <section class="about reveal">
@@ -34,6 +39,19 @@
         где дети изучают программирование, робототехнику, инженерию,
         3D-моделирование и современные технологии.
     </p>
+</section>
+
+<section class="infographic reveal">
+    <div class="infographic-content">
+        <div class="infographic-text">
+            <h2>Как проходят занятия</h2>
+            <p>
+                Уроки построены вокруг практики: ребята исследуют технологии, собирают проекты,
+                работают с наставниками и сразу видят результат своих инженерных идей.
+            </p>
+        </div>
+        <img src="headpic_masterclass.png" alt="Инфографика мастер-класса Инжинириума">
+    </div>
 </section>
 
 <section class="advantages reveal">
@@ -82,24 +100,25 @@
     <h2>Популярные направления</h2>
 
     <div class="cards">
-        <div class="card">
+        <a class="card course-preview-card" href="courses.html#robotics">
             <h3>Робототехника</h3>
             <p>Создание и программирование роботов.</p>
-        </div>
+        </a>
 
-        <div class="card">
+        <a class="card course-preview-card" href="courses.html#programming">
             <h3>Программирование</h3>
             <p>Основы Python, сайтов и разработки приложений.</p>
-        </div>
+        </a>
 
-        <div class="card">
+        <a class="card course-preview-card" href="courses.html#design">
             <h3>3D-моделирование</h3>
             <p>Проектирование объектов и работа с 3D-графикой.</p>
-        </div>
+        </a>
     </div>
 </section>
 
 <footer class="footer">
+    <img class="footer-logo" src="inginirium3.png" alt="Inginirium logo">
     <p>© 2026 Инжинириум МГТУ им. Н.Э. Баумана</p>
 </footer>
 

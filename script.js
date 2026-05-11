@@ -75,24 +75,50 @@ startCounters();
 const filterButtons = document.querySelectorAll(".filter-btn");
 const courseCards = document.querySelectorAll(".course-card");
 
+function applyCourseFilter(filterValue) {
+    const activeFilter = document.querySelector(`.filter-btn[data-filter="${filterValue}"]`);
+
+    if (!activeFilter) return;
+
+    filterButtons.forEach(btn => btn.classList.remove("active-filter"));
+    activeFilter.classList.add("active-filter");
+
+    courseCards.forEach(card => {
+        const cardCategory = card.getAttribute("data-category");
+
+        if (filterValue === "all" || filterValue === cardCategory) {
+            card.classList.remove("hide-course");
+        } else {
+            card.classList.add("hide-course");
+        }
+    });
+}
+
 filterButtons.forEach(button => {
     button.addEventListener("click", () => {
-        filterButtons.forEach(btn => btn.classList.remove("active-filter"));
-        button.classList.add("active-filter");
-
         const filterValue = button.getAttribute("data-filter");
 
-        courseCards.forEach(card => {
-            const cardCategory = card.getAttribute("data-category");
-
-            if (filterValue === "all" || filterValue === cardCategory) {
-                card.classList.remove("hide-course");
-            } else {
-                card.classList.add("hide-course");
-            }
-        });
+        applyCourseFilter(filterValue);
+        history.replaceState(null, "", "#" + filterValue);
     });
 });
+
+if (filterButtons.length > 0 && window.location.hash) {
+    const filterFromHash = window.location.hash.slice(1);
+    const activeFilter = document.querySelector(`.filter-btn[data-filter="${filterFromHash}"]`);
+
+    if (activeFilter) {
+        applyCourseFilter(filterFromHash);
+
+        const coursesSection = document.querySelector(".courses-section");
+
+        if (coursesSection) {
+            setTimeout(() => {
+                coursesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 100);
+        }
+    }
+}
 
 
 const modal = document.getElementById("course-modal");
@@ -103,8 +129,30 @@ const detailsButtons = document.querySelectorAll(".details-btn");
 
 detailsButtons.forEach(button => {
     button.addEventListener("click", () => {
+        const courseCard = button.closest(".course-card");
+        const courseMeta = courseCard.querySelector(".course-meta");
+        const courseResult = courseCard.querySelector(".course-result");
+        const courseProjects = courseCard.querySelector(".course-projects");
+
         modalTitle.textContent = button.getAttribute("data-title");
-        modalText.textContent = button.getAttribute("data-text");
+        modalText.innerHTML = "";
+
+        const description = document.createElement("p");
+        description.textContent = button.getAttribute("data-text");
+        modalText.append(description);
+
+        if (courseMeta) {
+            modalText.append(courseMeta.cloneNode(true));
+        }
+
+        if (courseResult) {
+            modalText.append(courseResult.cloneNode(true));
+        }
+
+        if (courseProjects) {
+            modalText.append(courseProjects.cloneNode(true));
+        }
+
         modal.classList.add("show-modal");
     });
 });

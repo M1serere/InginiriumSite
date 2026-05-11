@@ -29,6 +29,20 @@ body {
     color: #f2b600;
 }
 
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    text-decoration: none;
+}
+
+.logo-link img {
+    display: block;
+    width: 210px;
+    max-width: 42vw;
+    height: auto;
+}
+
 .nav a {
     margin-left: 25px;
     text-decoration: none;
@@ -44,9 +58,12 @@ body {
     height: 100vh;
     background: linear-gradient(135deg, #f2b600, #ffd84d);
     display: flex;
+    gap: 48px;
+    justify-content: space-between;
     align-items: center;
     padding: 0 60px;
     color: white;
+    overflow: hidden;
 }
 
 .hero-text {
@@ -62,6 +79,23 @@ body {
     font-size: 24px;
     min-height: 35px;
     margin-bottom: 30px;
+}
+
+.hero-logo-card {
+    width: min(36vw, 440px);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(91, 61, 0, 0.22);
+    background: white;
+    flex: 0 0 auto;
+}
+
+.hero-logo-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
 }
 
 .main-btn {
@@ -101,6 +135,35 @@ h2 {
     text-align: center;
 }
 
+.infographic {
+    background: #ffffff;
+}
+
+.infographic-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(280px, 489px);
+    gap: 42px;
+    align-items: center;
+}
+
+.infographic-text h2 {
+    text-align: left;
+}
+
+.infographic-text p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.infographic-content img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 18px 28px rgba(91, 61, 0, 0.12));
+}
+
 .cards {
     display: flex;
     gap: 25px;
@@ -128,6 +191,16 @@ h2 {
 
 .card p {
     line-height: 1.5;
+}
+
+.course-preview-card {
+    color: inherit;
+    text-decoration: none;
+}
+
+.course-preview-card:focus-visible {
+    outline: 3px solid #b56a00;
+    outline-offset: 4px;
 }
 
 .stats {
@@ -160,6 +233,18 @@ h2 {
     padding: 30px;
 }
 
+.footer-logo {
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    max-width: 70vw;
+    height: auto;
+}
+
 .reveal {
     opacity: 0;
     transform: translateY(60px);
@@ -186,6 +271,7 @@ h2 {
     .hero {
         padding: 0 30px;
         text-align: center;
+        justify-content: center;
     }
 
     .hero h1 {
@@ -196,8 +282,21 @@ h2 {
         font-size: 20px;
     }
 
+    .hero-logo-card {
+        display: none;
+    }
+
     section {
         padding: 60px 25px;
+    }
+
+    .infographic-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .infographic-text h2 {
+        text-align: center;
     }
 
     .stats-box {
@@ -264,6 +363,8 @@ h2 {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: 0.4s;
     animation: courseShow 0.5s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .course-card:hover {
@@ -299,7 +400,89 @@ h2 {
     margin-bottom: 7px;
 }
 
+.course-meta {
+    background: #fffaf0;
+    border-left: 4px solid #f2b600;
+    border-radius: 14px;
+    list-style: none;
+    margin-left: 0;
+    padding: 16px 18px;
+}
+
+.course-meta li {
+    line-height: 1.45;
+}
+
+.course-result,
+.course-projects {
+    margin-bottom: 18px;
+}
+
+.course-result h4,
+.course-projects h4 {
+    color: #8a5a00;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.course-result p,
+.course-projects p {
+    margin-bottom: 0;
+}
+
+.course-card .course-meta,
+.course-card .course-result,
+.course-card .course-projects {
+    display: none;
+}
+
+.modal-text {
+    max-height: min(58vh, 520px);
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.modal-text > p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.modal-text .course-meta,
+.modal-text .course-result,
+.modal-text .course-projects {
+    display: block;
+}
+
+.modal-text .course-meta {
+    margin-bottom: 22px;
+}
+
+.modal-text .course-result,
+.modal-text .course-projects {
+    padding-top: 4px;
+}
+
+.modal-signup-btn {
+    display: block;
+    width: 100%;
+    margin-top: 26px;
+    padding: 17px 30px;
+    background: #f2b600;
+    color: #ffffff;
+    border-radius: 18px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 12px 24px rgba(181, 106, 0, 0.28);
+}
+
+.modal-signup-btn:hover {
+    background: #b56a00;
+    transform: translateY(-2px);
+}
+
 .details-btn {
+    margin-top: auto;
     padding: 12px 20px;
     background: #f2b600;
     color: white;
